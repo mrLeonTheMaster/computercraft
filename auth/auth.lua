@@ -19,3 +19,5 @@ local function auth(main_function)
         end
     end
 end
+
+return {auth=auth}
