@@ -1,0 +1,26 @@
+term.clear()
+term.setCursorPos(1, 1)
+rednet.open("bottom")
+
+function process_message(computer_id, message)
+    local reply = {}
+    if message["type"] == "pin" then
+        if message["pin"] == "1111" then
+            reply["success"] = true
+            reply["id"] = 1
+            reply["name"] = "test1"
+            print("Access granted - " .. reply["name"] .. " (" .. reply["id"] .. ")")
+        else
+            reply["success"] = false
+            print("Access denied")
+        end
+    end
+    rednet.send(computer_id, reply)
+end
+
+print("Started")
+while true do
+    local computer_id, message = rednet.receive()
+    print("Received message from " .. computer_id)
+    pcall(process_message, computer_id, message)
+end
