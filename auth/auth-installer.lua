@@ -11,6 +11,7 @@ local function download(file_name, url)
     print("Downloaded " .. file_name)
 end
 
-download("basalt.lua", "https://raw.githubusercontent.com/Pyroxenium/Basalt2/refs/heads/main/release/basalt-full.lua")
-download("auth.lua", "https://raw.githubusercontent.com/mrLeonTheMaster/computercraft/refs/heads/main/auth/auth.lua")
+download("lib/basalt.lua", "https://raw.githubusercontent.com/Pyroxenium/Basalt2/refs/heads/main/release/basalt-full.lua")
+download("lib/auth.lua", "https://raw.githubusercontent.com/mrLeonTheMaster/computercraft/refs/heads/main/auth/auth.lua")
+download("lib/bigfont.lua", "https://pastebin.com/raw/3LfWxRWh")
 download("startup.lua", "https://raw.githubusercontent.com/mrLeonTheMaster/computercraft/refs/heads/main/auth/startup.lua")
